@@ -3,7 +3,7 @@ import { devtools } from 'frog/dev'
 import { serveStatic } from 'frog/serve-static'
 // import { neynar } from 'frog/hubs'
 import { handle } from 'frog/vercel'
-import { abi } from './abi.js'
+import { abi } from '../../delegate-frame/src/constants/governanceTokenAbi.js'
 import { z } from 'zod';
 // import { getCastIntentLink } from './getCastIntentLink.js';
 
@@ -133,10 +133,7 @@ app.frame('/share/:address', (c) => {
       <div
         style={{
           alignItems: 'center',
-          background:
-            status === 'response'
-              ? 'linear-gradient(to right, #432889, #17101F)'
-              : 'black',
+          background: 'black',
           backgroundSize: '100% 100%',
           display: 'flex',
           flexDirection: 'column',
@@ -164,7 +161,7 @@ app.frame('/share/:address', (c) => {
       </div>
     ),
     intents: [
-      <Button.Transaction target="/delegate">Delegate</Button.Transaction>,
+      <Button.Transaction target="/delegate/${}">Delegate</Button.Transaction>,
       <Button.Redirect location='https://vote.optimism.io/delegates'>Learn More</Button.Redirect>,
     ],
   })

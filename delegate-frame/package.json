@@ -1,0 +1,23 @@
+{
+  "name": "delegate-frame",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "frog dev",
+    "wrangler:dev": "wrangler dev src/index.tsx",
+    "wrangler:deploy": "wrangler deploy --minify src/index.tsx",
+    "wrangler:static": "cp -r ./node_modules/frog/_lib/ui/.frog ./public/frog"
+  },
+  "dependencies": {
+    "abitype": "^1.0.2",
+    "frog": "latest",
+    "hono": "^4",
+    "styled-components": "^6.1.8",
+    "viem": "^2.9.9",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "wrangler": "latest"
+  }
+}
